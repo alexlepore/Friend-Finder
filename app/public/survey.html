@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Friend Finder</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+</head>
+<body>
+<div class="container-fluid">
+	<div class="jumbotron">
+		<h1>Friend Survey</h1><br>
+		<hr>
+		<form method="POST" action="/api/friends">
+			<h3><strong>About You</strong></h3>
+			<fieldset class="form-group">
+				<label for="name">Name</label>
+				<input type="text" class="form-control" placeholder="ex: Jason Caldwell" id="name" name="name" required>
+			</fieldset>
+			<fieldset class="form-group">
+				<label for="photo">Photo Link</label>
+				<input type="text" class="form-control" placeholder="https://a3-images.myspacecdn.com/images03/1/240e42b5d9ce48a78983961e7fcb3c39/600x600.jpg" id="photo" name="photo" required>
+			</fieldset>
+			<hr>
+			<h4><strong>Question 1</strong></h4>
+			<fieldset class="form-group">
+				<label for="question1">I like scary movies.</label>
+				<br>
+				<div class="col-md-4">
+					<select class="form-control" id="question1" name="scores[0]">
+						<option>1 (Strongly Disagree)</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5 (Strongly Agree)</option>
+					</select>
+				</div>
+			</fieldset>
+			<h4><strong>Question 2</strong></h4>
+			<fieldset class="form-group">
+				<label for="question2">I enjoy reading.</label>
+				<br>
+				<div class="col-md-4">
+					<select class="form-control" id="question2" name="scores[1]">
+						<option>1 (Strongly Disagree)</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5 (Strongly Agree)</option>
+					</select>
+				</div>
+			</fieldset>
+			<h4><strong>Question 3</strong></h4>
+			<fieldset class="form-group">
+				<label for="question3">I enjoy video games.</label>
+				<br>
+				<div class="col-md-4">
+					<select class="form-control" id="question3" name="scores[2]">
+						<option>1 (Strongly Disagree)</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5 (Strongly Agree)</option>
+					</select>
+				</div>
+			</fieldset>
+			<h4><strong>Question 4</strong></h4>
+			<fieldset class="form-group">
+				<label for="question4">Dogs are better than cats.</label>
+				<br>
+				<div class="col-md-4">
+					<select class="form-control" id="question4" name="scores[3]"">
+						<option>1 (Strongly Disagree)</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5 (Strongly Agree)</option>
+					</select>
+				</div>
+			</fieldset>
+			<h4><strong>Question 5</strong></h4>
+			<fieldset class="form-group">
+				<label for="question5">I love the winter time!</label>
+				<br>
+				<div class="col-md-4">
+					<select class="form-control" id="question5" name="scores[4]">
+						<option>1 (Strongly Disagree)</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5 (Strongly Agree)</option>
+					</select>
+				</div>
+			</fieldset>
+			<h4><strong>Question 6</strong></h4>
+			<fieldset class="form-group">
+				<label for="question6">Music is life.</label>
+				<br>
+				<div class="col-md-4">
+					<select class="form-control" id="question6" name="scores[5]">
+						<option>1 (Strongly Disagree)</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5 (Strongly Agree)</option>
+					</select>
+				</div>
+			</fieldset>
+			<h4><strong>Question 7</strong></h4>
+			<fieldset class="form-group">
+				<label for="question7">Pizza is good.</label>
+				<br>
+				<div class="col-md-4">
+					<select class="form-control" id="question7" name="scores[6]">
+						<option>1 (Strongly Disagree)</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5 (Strongly Agree)</option>
+					</select>
+				</div>
+			</fieldset>
+			<h4><strong>Question 8</strong></h4>
+			<fieldset class="form-group">
+				<label for="question8">I would rather go to the beach, than climb a mountain.</label>
+				<br>
+				<div class="col-md-4">
+					<select class="form-control" id="question8" name="scores[7]">
+						<option>1 (Strongly Disagree)</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5 (Strongly Agree)</option>
+					</select>
+				</div>
+			</fieldset>
+			<h4><strong>Question 9</strong></h4>
+			<fieldset class="form-group">
+				<label for="question9">Blue is a better color than green.</label>
+				<br>
+				<div class="col-md-4">
+					<select class="form-control" id="question9" name="scores[8]">
+						<option>1 (Strongly Disagree)</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5 (Strongly Agree)</option>
+					</select>
+				</div>
+			</fieldset>
+			<h4><strong>Question 10</strong></h4>
+			<fieldset class="form-group">
+				<label for="question10">Pink is a better color than yellow.</label>
+				<br>
+				<div class="col-md-4">
+					<select class="form-control" id="question10" name="scores[9]">
+						<option>1 (Strongly Disagree)</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5 (Strongly Agree)</option>
+					</select>
+				</div>
+			</fieldset><br>
+			<input type="submit" class="btn btn-primary" value="Submit" id="submit">
+		</form>
+	</div>
+	<hr>
+	<a href="/api/friends">API Friends List</a> | <a href="https://github.com/alxx002" target="_blank">GitHub Repo</a>
+</div>
+<div id="resultmodal" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">X</button>
+				<h2 class="modal-title">Your Best Match Is: </h2>
+			</div>
+			<div class="modal-body">
+				<h2 id="resultname"></h2>
+				<img id="resultimage" width=300px alt="result">
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script type="text/javascript">
+	$('#submit').on("click", function() {
+		var userInput = {
+			name: $('#name').val().trim(),
+			photo: $('#photo').val().trim(),
+			scores: [$('#question1').val().trim(),
+					 $('#question2').val().trim(), 
+					 $('#question3').val().trim(), 
+					 $('#question4').val().trim(), 
+					 $('#question5').val().trim(), 
+					 $('#question6').val().trim(),
+					 $('#question7').val().trim(), 
+					 $('#question8').val().trim(),
+					 $('#question9').val().trim(), 
+					 $('#question10').val().trim()]
+		}
+		
+		$.post('/api/friends', userInput, function(data) {
+			$("#resultname").text(data.name);
+			$("#resultimage").attr("src", data.photo);
+			$("#resultmodal").modal("show");
+		});
+		return false;
+	});
+</script>
+
+
+</body>
+</html>
